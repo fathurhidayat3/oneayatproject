@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type"    content="text/html;charset=UTF-8">
+    <meta name="viewport"              content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta property="og:url"            content="https://debtronicslab.com" />
+    <meta property="og:title"          content="One Ayat Project" />
+    <meta property="og:description"    content="Sampaikanlah walau hanya satu ayat." />
+    <title>One Ayat Project</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.5.2/css/bulma.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Harmattan" rel="stylesheet">
+    <style>
+    nav > a {
+        color: #344146;
+    }
+    tr, td {
+        font-size: .8rem;
+    }
+    .hero {
+        background: url('bg_oap.jpg') center center no-repeat;
+        background-size: cover;
+    }
+    .hero.is-success {
+        background-color: #344146;
+    }
+    .bgku:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-image: linear-gradient(to top,#344146,white);
+        opacity: .2; 
+    }
+    .hero-head {
+        margin-bottom: 10px;
+    }
+    .is-mobile {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    .columns {
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+    .fbox {
+        margin-bottom: -20px;
+        
+    }
+    .field.has-addons .control:first-child .button, 
+    .field.has-addons .control:first-child .input, 
+    .field.has-addons .control:first-child .select select
+    {
+        border-bottom-left-radius : 10px;
+        border-top-left-radius : 10px;
+    }
+    .field.has-addons .control:last-child .button, 
+    .field.has-addons .control:last-child .input, 
+    .field.has-addons .control:last-child .select select
+    {
+        border-bottom-right-radius : 10px;
+        border-top-right-radius : 10px;
+    }
+    .textarea {
+        font-family: 'Harmattan', sans-serif;
+        height: 180px;
+    }
+    .control {
+        text-align: center;
+    }
+    .hero.is-success .nav-menu {
+        background-color: transparent;
+    }
+    .button.is-success.is-inverted {
+        color: #344146;
+    }
+    #nav-toggle-state {
+        display: none;
+    }
+    #nav-toggle-state:checked ~ .nav-menu {
+        display: block;
+    }
+    .fpanel {
+        margin-bottom: 10px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid white;
+    }
+    .sembunyi {
+        display: none;
+    }
+
+    @media screen and (max-width: 768px) {
+        .level-item:not(:last-child) {
+            margin-bottom: -20px;
+        }
+        .nav-left, .nav-toggle, .hero.is-success .nav-menu {
+            background-color: #3B3C3D;
+        }
+        option, .subtitle {
+            font-size: 1rem;
+        }
+        .select select:not([multiple]) {
+            width: 100px;
+        }
+        
+    }
+
+    </style>
+</head>
+<body>
+     <script>
+    window.fbAsyncInit = function() {
+        FB.init({
+            appId            : '514959148854481',
+            autoLogAppEvents : true,
+            xfbml            : true,
+            status           : true,
+            version          : 'v2.10'
+        });
+        FB.AppEvents.logPageView();
+    };
+    
+    (function(d, s, id){
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {return;}
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+                  
+    <div class="">  
+        <section class="hero is-success is-fullheight bgku">
+            <div class="hero-head">
+              <header class="nav">
+                <div class="container">
+                    <div class="nav-left">
+                        <a class="nav-item">
+                        <img src="" alt="One Ayat Project">
+                        </a>
+                    </div>
+                    <label class="nav-toggle" for="nav-toggle-state">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </label>
+
+                  <input type="checkbox" id="nav-toggle-state" />
+
+                  <div class="nav-right nav-menu">
+                    <a class="nav-item">
+                      Penggunaan
+                    </a>
+                    <a class="nav-item">
+                      Tentang
+                    </a>
+                    <span class="nav-item">
+                      <a class="button is-success is-inverted">
+                        <span class="icon">
+                          <i class="fa fa-github"></i>
+                        </span>
+                        <span>Source</span>
+                      </a>
+                    </span>
+                  </div>
+                </div>
+              </header>
+            </div>
+          
+            <div class="">
+                <div class="columns has-text-centered">
+                    <div class="column sembunyi"></div>
+                    <div class="column">
+                        <h1 class="title">One Ayat Project</h1>
+                        <h2 class="subtitle">Sampaikanlah walau hanya satu ayat.</h2>
+                    </div>
+                    <div class="column sembunyi"></div>
+                </div>
+
+                <div class="level-item is-mobile fbox">
+                    <div class="column is-6 has-text-centered">
+                        <div class="level has-text-centered">
+                        <div class="level-item">
+                        <div class="column">
+                        <div class="field has-addons">
+                            <div class="control">
+                            <div class="select">
+                                <select id="surah">
+                                    <option>Surah</option>
+                                </select>
+                            </div>
+                            </div>
+    
+                            <div class="control">
+                            <div class="select">
+                                <select id="ayat">
+                                    <option>Ayat</option>
+                                </select>
+                            </div>
+                            </div>
+
+                            &nbsp;
+
+                            <p class="control is-expanded is-hidden-mobile">
+                                <input class="input" type="text" 
+                                placeholder="Kata kunci"
+                                id="cari">
+                            </p>
+
+                            <p class="control is-expanded">
+                                <a class="button is-fullwidth" id="showModal">
+                                    <span class="is-hidden-tablet">Cari </span>
+                                    <span class="icon is-hidden-tablet">
+                                        <i class="fa fa-search is-hidden-tablet" 
+                                        id="showModal" aria-hidden="true"></i>
+                                    </span>
+                                    <i class="fa fa-search is-hidden-mobile" 
+                                    id="showModal" aria-hidden="true"></i>
+                                </a>
+                            </p>
+                        </div>
+                        </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="level-item is-mobile">
+                    <div class="column is-6">
+                    <textarea class="textarea is-size-5" 
+                    readonly id="ayat" data-clipboard-target="#ayat"
+                    dir="rtl" lang="ar" disabled></textarea>
+                    </div>
+                </div>
+
+                <div class="level-item is-mobile">
+                    <div class="column is-6 has-text-left fpanel">
+                        <nav class="level">
+                            <div class="level-item has-text-centered">
+                                <div class="column is-6 control" id="showAyat">
+                                    <p class="heading">Dengar</p>
+                                    <p class="title">
+                                        <a><i id="idengar" class="fa fa-volume-up" aria-hidden="true"></i></a>
+                                    </p>
+                                </div>
+
+                                <div class="column is-6 control" id="showArti">
+                                    <p class="heading">Terjemah</p>
+                                    <p class="title">
+                                        <a><i id="iarti" class="fa fa-globe" aria-hidden="true"></i></a>
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="level-item has-text-centered">
+                                <div class="column is-6 control">
+                                    <p class="heading">Suka</p>
+                                    <p class="title">
+                                        <a><i id="isuka" class="fa fa-heart" aria-hidden="true"></i></a>
+                                        
+                                    </p>
+                                </div>
+
+                                <div class="column is-6 control" id="showBagi">
+                                    <p class="heading">Bagikan</p>
+                                    <p class="title">
+                                        <a><i id="ibagi" class="fa fa-share-alt" aria-hidden="true"></i></a>
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                            
+                        </nav>
+                    </div>
+                </div>
+
+                <div class="columns has-text-centered">
+                    <div class="column sembunyi"></div>
+                    <div class="column">
+                        <p class="is-size-7"> 
+                            Mari membumikan Al Qur'an.
+                            Bagikan ayat pilihan anda!
+                        </p>
+                    </div>
+                    <div class="column sembunyi"></div>
+                </div>
+
+            </div>
+
+            <div class="hero-foot">
+                &emsp;
+            </div>
+        </section>
+
+        <div id="modal" class="modal">
+            <div class="modal-background"></div>
+            <div class="modal-content">
+                <div class="box">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                            <th>Nomor</th>
+                            <th>Nama</th>
+                            <th>Ayat</th>
+                            <th>Ayat</th>
+                            </tr>
+                        </thead>
+                        <tbody id="ftbody">
+                        </tbody>
+                    </table>
+                    <nav class="pagination is-small is-centered" 
+                    role="navigation" aria-label="pagination">
+                        <button class="pagination-previous"
+                        disabled="disabled">Previous</button>
+                        <button class="pagination-next"
+                        disabled="disabled">Next page</button>
+                    </nav>
+                </div>
+            </div>
+            <button class="modal-close is-large"></button>
+            
+        </div>
+
+        <audio crossorigin id="aayat" src=""></audio>
+        
+    </div>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js"></script>    
+
+    <script>
+    $(document).ready(function () {
+        new Clipboard('.textarea');
+        $("input#cari").focus();
+        var carival = '';
+
+        var text = "";
+        var textid = "";
+        var surah = "";
+        var ayat = "";
+        var bsurah, bayat = 0;
+        var qs = '';
+
+        var maxayat = {};
+
+        $(".pagination-next").prop("disabled", false);
+        $(".pagination-previous").prop("disabled", true);
+
+        $.ajax({
+            url: "https://api.alquran.cloud/surah",
+            context: document.body
+        }).done(function(data) {
+            $.each(data.data, function(key, value) {   
+                $('#surah').append($("<option></option>")
+                    .attr("value",key)
+                    .text(value.englishName)); 
+           });
+        });
+
+        if (window.location.href.indexOf("?") > -1) {
+            var vars = [], hash;
+            var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+            for(var i = 0; i < hashes.length; i++)
+            {
+                hash = hashes[i].split('=');
+                vars.push(hash[0]);
+                vars[hash[0]] = hash[1];
+            }
+
+            surah, bsurah = vars['surah'];
+            ayat, bayat = vars['ayat'];
+            carival = surah + ':' + ayat;
+
+            fajax(carival);
+            ftool();
+
+        } else {
+            ftool();
+        }
+
+        function fajax(carival) {
+            $.ajax({
+                url: "https://api.alquran.cloud/ayah/" + carival,
+                context: document.body
+            }).done(function(data) {
+                text = data.data.text;
+                $("textarea#ayat").val(text)
+                .removeAttr("disabled").attr("dir", "rtl")
+                .css('text-align','right');
+
+                qs = '(' + data.data.surah.englishName 
+                + ' : ' + data.data.numberInSurah + ')';
+            });
+
+            $.ajax({
+                url: "https://api.alquran.cloud/ayah/" + carival + "/ar.alafasy",
+                context: document.body
+            }).done(function(data) {
+                var url = data.data.audio;
+                var sec = "https://" + url.split("http://")[1];     
+                $("#aayat").attr("src", sec);
+            });
+
+            $.ajax({
+                url: "https://api.alquran.cloud/ayah/" + carival + "/id.indonesian",
+                context: document.body
+            }).done(function(data) {
+                textid = data.data.text;
+            });
+        }
+
+        
+
+        function ftool() {
+            $('#surah').change(function() {
+                $('#ayat').html("<option>Ayat</option>");
+                audio.pause();
+                $("#idengar").attr("class", "fa fa-volume-up");
+                surah = $('#surah').find(":selected").val();
+
+                $.ajax({
+                    url: "https://api.alquran.cloud/surah",
+                    context: document.body
+                }).done(function(data) {
+                    for (var i=1; i<= data.data[surah].numberOfAyahs; i++) {
+                        $('#ayat').append($("<option></option>")
+                            .attr("value",i)
+                            .text(i)); 
+                    }
+                });
+                
+                
+                $('#ayat').change(function() {
+                    audio.pause();
+                    $("#idengar").attr("class", "fa fa-volume-up");
+                    ayat = $('#ayat').find(":selected").val();
+                    carival = (parseInt(surah) + 1) + ':' + ayat;
+
+                    fajax(carival);
+                });
+            });
+
+            $("#showModal").click(function() {
+                cariayat = $("input#cari").val();
+                var pageNum = 1;
+                var maxPage = 0;
+
+                $.ajax({
+                    url: "https://api.alquran.cloud/search/" +
+                    cariayat + "/all/id.indonesian",
+                    context: document.body
+                }).done(function(data) {
+                    maxPage = Math.ceil(data.data.count / 4);
+
+                    modalTable();
+
+                    if(maxPage == 1) {
+                        $(".pagination-next").prop("disabled", true);
+                        $(".pagination-previous").prop("disabled", true);
+                    }
+
+                    $(".pagination-next").on("click", function() {
+                        $("#ftbody").html("");
+                        if (pageNum == maxPage-1){
+                            $(".pagination-next").prop("disabled", true);
+                        }
+                        $(".pagination-previous").prop("disabled", false);
+                        pageNum +=1 ;
+                        
+                        modalTable();
+                    });
+
+                    $(".pagination-previous").on("click", function() {
+                        $("#ftbody").html("");
+                        if (pageNum == 2){
+                            $(".pagination-previous").prop("disabled", true);
+                        }
+                        $(".pagination-next").prop("disabled", false);
+                        pageNum -=1 ;
+                        modalTable();
+                    });
+
+                    function modalTable() {
+                        var ftext = '';
+                        var tdRow = 0;
+
+                        $.each(data.data.matches.slice((pageNum*4)-4, pageNum*4), 
+                        function(key, value) {   
+                            if(value.text.length > 100) { 
+                                ftext = value.text.substring(0, 100) 
+                                + " ...<br>(<a class='lengkap'>selengkapnya</a>)";
+                            } else { ftext =  value.text 
+                            + "<br>(<a class='lengkap'>selengkapnya)</a>"; }
+
+                            $("#ftbody")
+                            .append("<tr>\
+                            <td class='ftsnom'>" + value.surah.number + "</td>\
+                            <td>" + value.surah.englishName + "</td>\
+                            <td class='ftnomor'>" + value.numberInSurah + "</td>\
+                            <td>" + ftext + "</td>\
+                            </tr>");
+                        });
+
+                        $(".lengkap").click( function() {
+                            tdRow = $(this).closest("tr").index();
+
+                            carival = $("td.ftsnom:eq(" + tdRow + ")").html() + ':' 
+                            + $("td.ftnomor:eq(" + tdRow + ")").html();
+                            fajax(carival);
+
+                            $(".modal").removeClass("is-active");
+                            $("#ftbody").html("");
+                            $("#idengar").attr("class", "fa fa-volume-up");
+                            $("#iarti").attr("class", "fa fa-globe");
+                            $(".pagination-next").prop("disabled", false);
+                        });
+
+                        
+                    }
+                    $(".modal").addClass("is-active");
+                });
+            });
+
+            $(".modal-close").click(function() {
+                $("#ftbody").html("");
+                $(".modal").removeClass("is-active");
+                $(".pagination-next").prop("disabled", false);
+            });
+
+            var audio = document.getElementById('aayat') || new Audio();
+            audio.crossOrigin = "anonymous";
+
+            $("#showAyat").click(function() {
+                if(audio.paused) {
+                    audio.play();
+                    $("#idengar").attr("class", "fa fa-pause");
+                } else {
+                    audio.pause();
+                    $("#idengar").attr("class", "fa fa-volume-up");
+                }
+                
+                $("#aayat").on("ended", function() {
+                    $("#idengar").attr("class", "fa fa-volume-up");
+                });
+            });
+
+            $("#showArti").click(function() {
+                if($("textarea#ayat").val() == textid) {
+                    $("textarea#ayat").val(text)
+                        .removeAttr("disabled").attr("dir", "rtl")
+                        .css('text-align','right');
+                    $("#iarti").attr("class", "fa fa-globe");
+                } else {
+                    $("textarea#ayat").val(textid)
+                    .attr("dir", "ltr")
+                    .css('text-align','center');
+                    $("#iarti").attr("class", "fa fa-undo");
+                }
+            });
+
+            $("#showBagi").click(function() {
+                if(text != '') {
+                    FB.ui(
+                    {
+                        method: 'share',
+                        href: 'https://debtronicslab.com/?surah=' 
+                        + bsurah + '&ayat=' + bayat,
+                        quote: qs + ' terjemahan : ' + textid
+                    }, function(response){});
+                } else {
+                    alert("Tentukan dahulu ayat yang ingin anda share dengan fitur pencarian.");
+                    $("input#cari").focus();
+                }    
+            });
+        }
+    });
+    </script>
+    
+</body>
+</html>
