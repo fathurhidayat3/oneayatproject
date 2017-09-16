@@ -8,8 +8,8 @@
     <meta property="og:title"          content="One Ayat Project" />
     <meta property="og:description"    content="Sampaikanlah walau hanya satu ayat." />
     <title>One Ayat Project</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.5.2/css/bulma.css"/>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet"             href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.5.2/css/bulma.css"/>
+    <link rel="stylesheet"             href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Harmattan" rel="stylesheet">
     <style>
     nav > a {
@@ -91,7 +91,10 @@
     .sembunyi {
         display: none;
     }
-
+    .tipis {
+        margin-top: 3px;
+        margin-bottom: 3px;
+    }
     @media screen and (max-width: 768px) {
         .level-item:not(:last-child) {
             margin-bottom: -20px;
@@ -104,6 +107,13 @@
         }
         .select select:not([multiple]) {
             width: 100px;
+        }
+        .box {
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+        td, tr {
+            font-size: 10px;
         }
         
     }
@@ -211,14 +221,18 @@
                             </p>
 
                             <p class="control is-expanded">
-                                <a class="button is-fullwidth" id="showModal">
-                                    <span class="is-hidden-tablet">Cari </span>
-                                    <span class="icon is-hidden-tablet">
-                                        <i class="fa fa-search is-hidden-tablet" 
-                                        id="showModal" aria-hidden="true"></i>
+                                <a class="button is-fullwidth is-hidden-mobile" id="showModal">
+                                    <span class="">Cari </span>
+                                    <span class="icon">
+                                        <i id="showModal" class="fa fa-search" aria-hidden="true"></i>
                                     </span>
-                                    <i class="fa fa-search is-hidden-mobile" 
-                                    id="showModal" aria-hidden="true"></i>
+                                </a>
+
+                                <a class="button is-fullwidth is-hidden-tablet" id="showCari">
+                                    <span class="is-hidden-tablet">Cari </span>
+                                    <span class="icon">
+                                        <i id="showCari" class="fa fa-search" aria-hidden="true"></i>
+                                    </span>
                                 </a>
                             </p>
                         </div>
@@ -240,27 +254,26 @@
                     <div class="column is-6 has-text-left fpanel">
                         <nav class="level">
                             <div class="level-item has-text-centered">
+                                <div class="column is-6 control" id="showQari">
+                                    <p class="heading">Qari</p>
+                                    <p class="title">
+                                        <a><i id="isuka" class="fa fa-user" aria-hidden="true"></i></a>    
+                                    </p>
+                                </div>
+
                                 <div class="column is-6 control" id="showAyat">
                                     <p class="heading">Dengar</p>
                                     <p class="title">
                                         <a><i id="idengar" class="fa fa-volume-up" aria-hidden="true"></i></a>
                                     </p>
                                 </div>
+                            </div>
 
+                            <div class="level-item has-text-centered">
                                 <div class="column is-6 control" id="showArti">
                                     <p class="heading">Terjemah</p>
                                     <p class="title">
                                         <a><i id="iarti" class="fa fa-globe" aria-hidden="true"></i></a>
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div class="level-item has-text-centered">
-                                <div class="column is-6 control">
-                                    <p class="heading">Suka</p>
-                                    <p class="title">
-                                        <a><i id="isuka" class="fa fa-heart" aria-hidden="true"></i></a>
-                                        
                                     </p>
                                 </div>
 
@@ -269,7 +282,6 @@
                                     <p class="title">
                                         <a><i id="ibagi" class="fa fa-share-alt" aria-hidden="true"></i></a>
                                     </p>
-                                    
                                 </div>
                             </div>
                             
@@ -295,32 +307,66 @@
             </div>
         </section>
 
-        <div id="modal" class="modal">
-            <div class="modal-background"></div>
-            <div class="modal-content">
-                <div class="box">
-                    <table class="table">
-                        <thead>
-                            <tr>
-                            <th>Nomor</th>
-                            <th>Nama</th>
-                            <th>Ayat</th>
-                            <th>Ayat</th>
-                            </tr>
-                        </thead>
-                        <tbody id="ftbody">
-                        </tbody>
-                    </table>
-                    <nav class="pagination is-small is-centered" 
-                    role="navigation" aria-label="pagination">
-                        <button class="pagination-previous"
-                        disabled="disabled">Previous</button>
-                        <button class="pagination-next"
-                        disabled="disabled">Next page</button>
-                    </nav>
-                </div>
+        <div id="modalc" class="modal is-hidden-tablet">
+        <div class="modal-background"></div>
+        <div class="modal-content">
+            <div class="box modal-content-width">
+                <p class="tipis">Masukkan kata kunci : </p>
+
+                <p class="control is-expanded tipis">
+                    <input class="input" type="text" 
+                    placeholder="Kata kunci"
+                    id="mcari">
+                </p>
+
+                <a class="button is-fullwidth is-hidden-tablet tipis" id="mshowCari">
+                    <span class="is-hidden-tablet">Cari </span>
+                </a>
             </div>
-            <button class="modal-close is-large"></button>
+        </div>
+        <button class="modal-close is-large"></button>
+        </div>
+
+        <div id="modal" class="modal">
+        <div class="modal-content-width">
+        <div class="box modal-content-width">
+            <table class="table">
+                <thead>
+                    <tr>
+                    <th>Nomor</th>
+                    <th>Nama</th>
+                    <th>Ayat</th>
+                    <th>Ayat</th>
+                    </tr>
+                </thead>
+                <tbody id="ftbody">
+                </tbody>
+            </table>
+            <nav class="pagination is-small is-centered" 
+            role="navigation" aria-label="pagination">
+                <button class="pagination-previous"
+                disabled="disabled">Previous</button>
+                <button class="pagination-next"
+                disabled="disabled">Next page</button>
+            </nav>
+        </div>
+        </div>
+        <button class="modal-close is-large"></button>
+            
+        </div>
+
+        <div id="modalq" class="modal">
+        <div class="modal-content-width">
+            <div class="box ">
+                <p>Pilih qari : </p>
+                <hr>
+                <table class="table">
+                    <tbody id="ftbodyq">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <button class="modal-close is-large"></button>
             
         </div>
 
@@ -334,6 +380,8 @@
     <script>
     $(document).ready(function () {
         new Clipboard('.textarea');
+        var audio = document.getElementById('aayat') || new Audio();
+        audio.crossOrigin = "anonymous";
         $("input#cari").focus();
         var carival = '';
 
@@ -343,8 +391,15 @@
         var ayat = "";
         var bsurah, bayat = 0;
         var qs = '';
-
+        var fqari = "ar.alafasy";
+        
+        var qAlias = {};
         var maxayat = {};
+        var otherq = ['Shamshad Ali Khan', 
+            'Ibrahim Walk',
+            'Fooladvand - Hedayatfar',
+            'Youssouf Leclerc',
+            '中文'];
 
         $(".pagination-next").prop("disabled", false);
         $(".pagination-previous").prop("disabled", true);
@@ -358,6 +413,31 @@
                     .attr("value",key)
                     .text(value.englishName)); 
            });
+        });
+
+        $.ajax({
+            url: "https://api.alquran.cloud/edition?format=audio",
+            context: document.body
+        }).done(function(data) {
+            $('#ftbodyq').append($("<tr>"));
+            var counter = 1;
+            $.each(data.data, function(key, value) {
+                if(otherq.includes(value.name)) {
+                    console.log('skip');
+                } else {
+                    $('#ftbodyq').append($("<td><a class='pilihqari'>" 
+                        + value.name + "</a></td>"));
+
+                    if(counter % 3 == 0) { 
+                        $('#ftbodyq').append($("</tr><tr>"));         
+                    }
+                    counter++;
+
+                    qAlias[value.name] = value.identifier;
+                }
+                
+           });
+           $('#ftbodyq').append($("</tr>"));
         });
 
         if (window.location.href.indexOf("?") > -1) {
@@ -396,7 +476,7 @@
             });
 
             $.ajax({
-                url: "https://api.alquran.cloud/ayah/" + carival + "/ar.alafasy",
+                url: "https://api.alquran.cloud/ayah/" + carival + "/" + fqari,
                 context: document.body
             }).done(function(data) {
                 var url = data.data.audio;
@@ -411,8 +491,6 @@
                 textid = data.data.text;
             });
         }
-
-        
 
         function ftool() {
             $('#surah').change(function() {
@@ -432,19 +510,69 @@
                     }
                 });
                 
-                
                 $('#ayat').change(function() {
-                    audio.pause();
                     $("#idengar").attr("class", "fa fa-volume-up");
                     ayat = $('#ayat').find(":selected").val();
                     carival = (parseInt(surah) + 1) + ':' + ayat;
 
                     fajax(carival);
+                    $("#iarti").attr("class", "fa fa-globe");
+                });
+            });
+
+            $("#showQari").click(function() {
+                $("#modalq").addClass("is-active");
+
+                $(".pilihqari").on("click", function () {
+                    
+                    var qariID = $(this).html();  
+
+                    fqari = qAlias[qariID];
+
+                    $.ajax({
+                        url: "https://api.alquran.cloud/ayah/" + carival + "/" + fqari,
+                        context: document.body
+                    }).done(function(data) {
+                        var url = data.data.audio;
+                        var sec = "https://" + url.split("http://")[1];     
+                        $("#aayat").attr("src", sec);
+                    });
+                    $("#modalq").removeClass("is-active");
+                    
+                });
+            });
+
+            $("#showAyat").click(function() {
+                console.log($("#aayat").attr("src"));
+                if(audio.paused) {
+                    audio.play();
+                    $("#idengar").attr("class", "fa fa-pause");
+                } else {
+                    audio.pause();
+                    $("#idengar").attr("class", "fa fa-volume-up");
+                }
+                $("#aayat").on("ended", function() {
+                    $("#idengar").attr("class", "fa fa-volume-up");
+                });
+            });
+
+            $("#showCari").click(function() {
+                $("#modalc").addClass("is-active");
+
+                $("#mshowCari").click(function () {
+                    cariayat = $("input#mcari").val();
+
+                    pencarian();
                 });
             });
 
             $("#showModal").click(function() {
                 cariayat = $("input#cari").val();
+                
+                pencarian();
+            });
+
+            function pencarian () {
                 var pageNum = 1;
                 var maxPage = 0;
 
@@ -487,7 +615,7 @@
                         var ftext = '';
                         var tdRow = 0;
 
-                        $.each(data.data.matches.slice((pageNum*4)-4, pageNum*4), 
+                        $.each(data.data.matches.slice((pageNum*3)-3, pageNum*3), 
                         function(key, value) {   
                             if(value.text.length > 100) { 
                                 ftext = value.text.substring(0, 100) 
@@ -502,49 +630,30 @@
                             <td class='ftnomor'>" + value.numberInSurah + "</td>\
                             <td>" + ftext + "</td>\
                             </tr>");
-                        });
+                            });
 
-                        $(".lengkap").click( function() {
-                            tdRow = $(this).closest("tr").index();
+                            $(".lengkap").click( function() {
+                                tdRow = $(this).closest("tr").index();
 
-                            carival = $("td.ftsnom:eq(" + tdRow + ")").html() + ':' 
-                            + $("td.ftnomor:eq(" + tdRow + ")").html();
-                            fajax(carival);
+                                carival = $("td.ftsnom:eq(" + tdRow + ")").html() + ':' 
+                                + $("td.ftnomor:eq(" + tdRow + ")").html();
+                                fajax(carival);
 
-                            $(".modal").removeClass("is-active");
-                            $("#ftbody").html("");
-                            $("#idengar").attr("class", "fa fa-volume-up");
-                            $("#iarti").attr("class", "fa fa-globe");
-                            $(".pagination-next").prop("disabled", false);
-                        });
-
-                        
-                    }
-                    $(".modal").addClass("is-active");
+                                $(".modal").removeClass("is-active");
+                                $("#ftbody").html("");
+                                $("#idengar").attr("class", "fa fa-volume-up");
+                                $("#iarti").attr("class", "fa fa-globe");
+                                $(".pagination-next").prop("disabled", false);
+                            });
+                        }
+                    $("#modal").addClass("is-active");
                 });
-            });
+            }
 
             $(".modal-close").click(function() {
                 $("#ftbody").html("");
                 $(".modal").removeClass("is-active");
                 $(".pagination-next").prop("disabled", false);
-            });
-
-            var audio = document.getElementById('aayat') || new Audio();
-            audio.crossOrigin = "anonymous";
-
-            $("#showAyat").click(function() {
-                if(audio.paused) {
-                    audio.play();
-                    $("#idengar").attr("class", "fa fa-pause");
-                } else {
-                    audio.pause();
-                    $("#idengar").attr("class", "fa fa-volume-up");
-                }
-                
-                $("#aayat").on("ended", function() {
-                    $("#idengar").attr("class", "fa fa-volume-up");
-                });
             });
 
             $("#showArti").click(function() {
